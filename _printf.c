@@ -5,31 +5,39 @@
  * @format: string of format to use and print
  * Return: 0
  */
-
 int _printf(const char *format, ...)
 {
-	va_list arg;
 	int i = 0;
 	int j = 0;
-
-	typeprint storage[] = {
-		{"c", _putchar},
+	int nbpr = 0;
+	type_print storage[] = {
+		{"c", _print_char},
 		{"s", _print_str},
-		{NULL, NULL}
+		{"%", _print_p},
+		{'\0', NULL}
 	};
+	va_list arg;
 
 	va_start(arg, format);
-
-	while (format && format[i] != '\0')
+	for (i = 0; format != NULL && format[i] != '\0'; i++)
 	{
-		while (j < 2)
+		if (format[i] == '%')
 		{
-			if (format[i] == storage[j].type_arg)
-			storage[j].fp(arg);
+			for (j = 0; storage[j].type_arg != 0; j++)
+			{
+				if (format[i + 1] == *storage[j].type_arg)
+				{
+					nbpr += storage[j].fp(arg);
+					i++;
+					break;
+				}
+			}
 		}
-		j++
+		else
+		{
+			nbpr += _putchar(format[i]);
+		}
 	}
-	i++;
 	va_end(arg);
-	return (0);
+	return (nbpr);
 }
