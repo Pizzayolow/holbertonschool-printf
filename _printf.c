@@ -42,7 +42,7 @@ int _printf(const char *format, ...)
 		}
 		else
 		{
-			nbpr += _putchar(format[i]);
+			nbpr += write(1, &format[i], 1);
 		}
 	}
 	va_end(arg);
