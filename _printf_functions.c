@@ -39,6 +39,11 @@ int _print_str(va_list arg)
 	char *s;
 
 	s = va_arg(arg, char *);
+	if (s == NULL)
+	{
+		s = "(null)";
+	}
+
 	return (write(1, s, strlen(s)));
 }
 
