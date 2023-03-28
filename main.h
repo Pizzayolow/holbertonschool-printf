@@ -15,7 +15,6 @@ typedef struct type_print
 	int (*fp)(va_list);
 }type_print;
 
-int _putchar(char c);
 int _print_char(va_list arg);
 int _print_str(va_list arg);
 int _print_p(va_list arg);
