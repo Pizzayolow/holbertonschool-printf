@@ -13,7 +13,7 @@ typedef struct type_print
 {
 	char *type_arg;
 	int (*fp)(va_list);
-}type_print;
+} type_print;
 
 int _print_char(va_list arg);
 int _print_str(va_list arg);
