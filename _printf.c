@@ -7,9 +7,7 @@
  */
 int _printf(const char *format, ...)
 {
-	int i = 0;
-	int j = 0;
-	int nbpr = 0;
+	int i = 0, j = 0, nbpr = 0;
 	type_print storage[] = {
 		{"c", _print_char},
 		{"s", _print_str},
@@ -22,7 +20,7 @@ int _printf(const char *format, ...)
 
 	if (format == NULL)
 	{
-		return (- 1);
+		return (-1);
 	}
 	for (i = 0; format != NULL && format[i] != '\0'; i++)
 	{
@@ -36,7 +34,7 @@ int _printf(const char *format, ...)
 					i++;
 					break;
 				}
-				if (storage[j + 1].type_arg == '\0')
+				if (*storage[j + 1].type_arg == '\0')
 				{
 					nbpr += write(1, &format[i], 1);
 				}
