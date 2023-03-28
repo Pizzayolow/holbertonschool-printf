@@ -19,6 +19,11 @@ int _printf(const char *format, ...)
 	va_list arg;
 
 	va_start(arg, format);
+
+	if (format == NULL)
+	{
+		return (- 1);
+	}
 	for (i = 0; format != NULL && format[i] != '\0'; i++)
 	{
 		if (format[i] == '%')
@@ -30,6 +35,10 @@ int _printf(const char *format, ...)
 					nbpr += storage[j].fp(arg);
 					i++;
 					break;
+				}
+				if (storage[j + 1].type_arg == '\0')
+				{
+					nbpr += write(1, &format[i], 1);
 				}
 			}
 		}

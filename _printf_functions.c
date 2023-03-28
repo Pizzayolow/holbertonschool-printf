@@ -51,8 +51,9 @@ int _print_str(va_list arg)
  */
 int _print_p(va_list arg)
 {
-  (void) arg;
-  int p;
-  p = '%';
-  return(write(1, &p, 1));
+	(void) arg;
+	int p;
+
+	p = '%';
+	return (write(1, &p, 1));
 }
