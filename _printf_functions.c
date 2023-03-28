@@ -22,9 +22,10 @@ int _putchar(char c)
 
 int _print_char(va_list arg)
 {
-char c_to_print;
-c_to_print = va_arg(arg, int);
-return (write(1, &c_to_print, 1));
+	char c_to_print;
+
+	c_to_print = va_arg(arg, int);
+	return (write(1, &c_to_print, 1));
 }
 /**
  * _print_str - writes the string s to sdtout
@@ -39,4 +40,19 @@ int _print_str(va_list arg)
 
 	s = va_arg(arg, char *);
 	return (write(1, s, strlen(s)));
+}
+
+/**
+ * _print_p - print a percent
+ * @arg: arg pointer
+ *
+ * Return: if success = 1
+ * On error, -1 is returned and error is set appropriatly
+ */
+int _print_p(va_list arg)
+{
+  (void) arg;
+  int p;
+  p = '%';
+  return(write(1, &p, 1));
 }
