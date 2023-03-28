@@ -34,7 +34,7 @@ int _printf(const char *format, ...)
 					i++;
 					break;
 				}
-				if (*storage[j + 1].type_arg == '\0')
+				if (storage[j + 1].type_arg == NULL)
 				{
 					nbpr += write(1, &format[i], 1);
 				}
