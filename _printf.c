@@ -11,6 +11,7 @@ int _printf(const char *format, ...)
 	type_print storage[] = {
 		{"c", _print_char},
 		{"s", _print_str},
+		{"d", _print_decimal},
 		{"%", _print_p},
 		{'\0', NULL}
 	};

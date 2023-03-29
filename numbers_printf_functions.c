@@ -42,7 +42,7 @@ int _print_decimal(va_list arg)
 		return (write(1, &zero, 1));
 	}
 
-	tableau = malloc(sizeof(char) * longueur_int(number));
+	tableau = malloc(sizeof(char) * longueur_int(number) + 1);
 	if (tableau == NULL)
 	{
 		return (-1);
@@ -50,7 +50,13 @@ int _print_decimal(va_list arg)
 
 	if (number < 0)
 	{
-		number = -number;
+		tableau = malloc(sizeof(char) * longueur_int(number) + 2);
+		if (tableau == NULL)
+		{
+			return (-1);
+		}
+
+		number *= (-1);
 		putchar('-');
 	}
 
