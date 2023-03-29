@@ -1,6 +1,17 @@
 #include "main.h"
 
 /**
+   * _putchar - the putchar function, homemade
+   * @c: the string to print
+   *
+   * Return: if success = 1
+   */
+int _putchar(char c)
+{
+	return (write(1, &c, 1));
+}
+
+/**
  * _print_char - writes the string s to sdtout
  * @arg: the string to print
  *
