@@ -26,10 +26,6 @@ RETURN VALUE
 Upon successful completion, _printf() returns the number of characters printed (excluding the null byte used to end output to strings). If an output error occurs, the function returns a negative value.
 
 
-ERRORS
-
-If an error occurs, _printf() returns a negative value and sets errno to indicate the error.
-
 
 EXAMPLES
 
