@@ -1,68 +1,41 @@
 #include "main.h"
 /**
- * longueur_int - deter;ine the lenght of a int
- * @number: the string to print
- *
- * Return: if success = 1
+ * _print_decimal - function that converts a number into a string
+ * @arg: variable list of arguments
+ * Return: the number of printed characters
  */
-
-int longueur_int(int number)
+int _print_decimal(va_list arg)
 {
-	int count = 0;
+	unsigned int count;
+	long int n, aux, num, abs;
 
-	if (number < 0)
+	count = 0;
+	n = va_arg(arg, int);
+
+	if (n < 0)
 	{
-		number = -number;
+		abs = (n * -1);
+		count += _putchar('-');
 	}
-	while (number > 0)
+	else
 	{
-		number = number / 10;
-		count++;
+		abs = n;
+	}
+
+	aux = abs;
+	num = 1;
+
+	while (aux > 9)
+	{
+		aux /= 10;
+		num *= 10;
+	}
+
+	while (num >= 1)
+	{
+		count += _putchar(((abs / num) % 10) + '0');
+		num /= 10;
 	}
 
 	return (count);
 }
-
-/**
- * putint - print the decimal
- * @number: the number who want to print
- *
- * Return: if success = the int
- */
-
-int putint(long int number)
-{
-	long int x = 0;
-
-	if (number < 0)
-	{
-		number = -number;
-		write(1, "-", 1);
-	}
-
-	if (number > 10)
-	{
-		putint(number / 10);
-	}
-	x = number % 10 + '0';
-	write(1, &x, 1);
-
-	return (longueur_int(number));
-}
-
-/**
-* _print_decimal - print the decimal
-* @arg: the number who want to print
-*
-* Return: if success = the int
-*/
-
-int _print_decimal(va_list arg)
-{
-	long int number = va_arg(arg, int);
-
-	return (putint(number));
-
-}
-
-
