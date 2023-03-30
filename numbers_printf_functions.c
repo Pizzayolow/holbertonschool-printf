@@ -32,18 +32,20 @@ int longueur_int(int number)
 
 int putint(long int number)
 {
+	long int x = 0;
+
 	if (number < 0)
 	{
 		number = -number;
-		_putchar('-');
+		write(1, "-", 1);
 	}
 
 	if (number > 10)
 	{
 		putint(number / 10);
 	}
-
-	_putchar(number % 10 + '0');
+	x = number % 10 + '0';
+	write(1, &x, 1);
 
 	return (longueur_int(number));
 }
