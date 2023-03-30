@@ -3,7 +3,7 @@
 /**
  * _printf - the printf fonction
  * @format: string of format to use and print
- * Return: 0
+ * Return: the lenght of the format
  */
 int _printf(const char *format, ...)
 {

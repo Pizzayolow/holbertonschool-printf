@@ -1,7 +1,7 @@
 #include "main.h"
 /**
- * _print_decimal - function that converts a number into a string
- * @arg: variable list of arguments
+ * _print_decimal - function that print in the sdtout the decimal and the int
+ * @arg: the number or the variable who wants to print
  * Return: the number of printed characters
  */
 int _print_decimal(va_list arg)

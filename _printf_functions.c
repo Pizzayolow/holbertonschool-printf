@@ -12,11 +12,10 @@ int _putchar(char c)
 }
 
 /**
- * _print_char - writes the string s to sdtout
- * @arg: the string to print
+ * _print_char - writes the char to sdtout
+ * @arg: the char to print
  *
- * Return: if success = 1
- * On error, -1 is returned and error is set appropriatly
+ * Return: the lenght and print the char
  */
 
 int _print_char(va_list arg)
@@ -30,8 +29,7 @@ int _print_char(va_list arg)
  * _print_str - writes the string s to sdtout
  * @arg: the string to print
  *
- * Return: if success = 1
- * On error, -1 is returned and error is set appropriatly
+ * Return: the lenght and the string in the sdtout
  */
 int _print_str(va_list arg)
 {
@@ -48,10 +46,9 @@ int _print_str(va_list arg)
 
 /**
  * _print_p - print a percent
- * @arg: arg pointer
+ * @arg: a percent to print
  *
- * Return: if success = 1
- * On error, -1 is returned and error is set appropriatly
+ * Return: a % is print
  */
 int _print_p(va_list arg)
 {

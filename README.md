@@ -60,7 +60,7 @@ _printf is a custom implementation of the C programming function printf.
 
 - <b>_printf_functions.c:</b> contains the functions _print_char and _print_str which handle the conversion specifiers c and s, respectively. <br/>Contains the functions _print_p, which print a percent.
 
-- <b>numbers_printf_functions.c:</b> contains the functions longueur_int, which determine the lenght of a int. <br/> contains the functions _print_decimal, which print the decimal. <br/> contains the functions reverse_array, which reverses the sting.
+- <b>numbers_printf_functions.c:</b> contains the functions longueur_int, which determine the lenght of a int. <br/> contains the functions _print_decimal, which print the decimal.
 
 
 <h2>Authors</h2>
