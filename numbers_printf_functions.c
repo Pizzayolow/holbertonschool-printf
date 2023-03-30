@@ -24,73 +24,43 @@ int longueur_int(int number)
 }
 
 /**
- * _print_decimal - print the decimal
- * @arg: the number who want to print
+ * putint - print the decimal
+ * @number: the number who want to print
  *
  * Return: if success = the int
  */
 
-int _print_decimal(va_list arg)
+int putint(long int number)
 {
-	int i = 0;
-	char zero = '0';
-	int number = va_arg(arg, int);
-	char *tableau;
-
-	if (number == 0)
-	{
-		return (write(1, &zero, 1));
-	}
-
-	tableau = malloc(sizeof(char) * longueur_int(number) + 1);
-	if (tableau == NULL)
-	{
-		return (-1);
-	}
-
 	if (number < 0)
 	{
-		tableau = malloc(sizeof(char) * longueur_int(number) + 2);
-		if (tableau == NULL)
-		{
-			return (-1);
-		}
-
-		number *= (-1);
-		putchar('-');
+		number = -number;
+		_putchar('-');
 	}
 
-
-	while (number > 0)
+	if (number > 10)
 	{
-		tableau[i] = number % 10;
-		number = number / 10;
-		i++;
+		putint(number / 10);
 	}
-	reverse_array(tableau, i);
 
-	return (i + 1);
+	_putchar(number % 10 + '0');
+
+	return (longueur_int(number));
 }
 
 /**
- * reverse_array - deter;ine the lenght of a int
- * @tableau: the array who want to reverse
- * @longueurtableau: the lenght of the array
- *
- * Return: int
- */
+* _print_decimal - print the decimal
+* @arg: the number who want to print
+*
+* Return: if success = the int
+*/
 
-int reverse_array(char *tableau, int longueurtableau)
+int _print_decimal(va_list arg)
 {
-	int i = 0;
-	int count = 0;
+	long int number = va_arg(arg, int);
 
-	longueurtableau = longueurtableau - 1;
+	return (putint(number));
 
-	for (i = longueurtableau; i >= 0; i--, count++)
-	{
-		_putchar(tableau[i] + '0');
-	}
-
-	return (count);
 }
+
+

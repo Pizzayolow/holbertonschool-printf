@@ -22,6 +22,6 @@ int _printf(const char *format, ...);
 int _putchar(char c);
 int longueur_int(int number);
 int _print_decimal(va_list arg);
-int reverse_array(char *tableau, int longueurtableau);
+int putint(long int number);
 
 #endif

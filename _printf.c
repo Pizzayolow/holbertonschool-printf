@@ -12,6 +12,7 @@ int _printf(const char *format, ...)
 		{"c", _print_char},
 		{"s", _print_str},
 		{"d", _print_decimal},
+		{"i", _print_decimal},
 		{"%", _print_p},
 		{'\0', NULL}
 	};
@@ -42,9 +43,7 @@ int _printf(const char *format, ...)
 			}
 		}
 		else
-		{
 			nbpr += write(1, &format[i], 1);
-		}
 	}
 	va_end(arg);
 	return (nbpr);
